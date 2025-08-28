@@ -1,14 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Félicitations ! - Le Code Intestinal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 50%, #ff9ff3 100%);
+            min-height: 100vh;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #ffd700;
+            animation: confetti-fall 3s linear infinite;
+        }
+
+        .confetti:nth-child(1) { left: 10%; animation-delay: 0s; background: #ff6b6b; }
+        .confetti:nth-child(2) { left: 20%; animation-delay: 0.5s; background: #4ecdc4; }
+        .confetti:nth-child(3) { left: 30%; animation-delay: 1s; background: #45b7d1; }
+        .confetti:nth-child(4) { left: 40%; animation-delay: 1.5s; background: #96ceb4; }
+        .confetti:nth-child(5) { left: 50%; animation-delay: 2s; background: #ffeaa7; }
+        .confetti:nth-child(6) { left: 60%; animation-delay: 0.3s; background: #fd79a8; }
+        .confetti:nth-child(7) { left: 70%; animation-delay: 0.8s; background: #fdcb6e; }
+        .confetti:nth-child(8) { left: 80%; animation-delay: 1.3s; background: #6c5ce7; }
+        .confetti:nth-child(9) { left: 90%; animation-delay: 1.8s; background: #a29bfe; }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .celebration-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 60px 40px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(15px);
+            transform: translateY(0);
+            animation: celebrate 1s ease-out;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes celebrate {
+            0% {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            50% {
+                transform: translateY(-10px) scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .trophy-icon {
+            font-size: 5rem;
+            margin-bottom: 30px;
+            animation: trophy-bounce 2s infinite;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+        }
+
+        @keyframes trophy-bounce {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            25% { transform: translateY(-10px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            75% { transform: translateY(-10px) rotate(0deg); }
+        }
+
+        .celebration-card h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24, #ff9ff3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .celebration-card h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 35px;
+        }
+
+        .celebration-card p {
+            font-size: 1.3rem;
+            color: #5a6c7d;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .success-message {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 159, 243, 0.1));
+            border-radius: 20px;
+            padding: 30px;
+            margin: 35px 0;
+            border: 2px solid rgba(255, 107, 107, 0.2);
+        }
+
+        .success-message h3 {
+            color: #e74c3c;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .email-info {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 152, 0, 0.1));
+            border: 2px dashed #ffc107;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 35px 0;
+        }
+
+        .email-info strong {
+            color: #f39c12;
+            font-size: 1.2rem;
+        }
+
+        .motivation-box {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(139, 195, 74, 0.1));
+            border-radius: 20px;
+            padding: 30px;
+            margin: 35px 0;
+            border-left: 5px solid #4caf50;
+        }
+
+        .motivation-box h3 {
+            color: #4caf50;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .sparkle {
+            display: inline-block;
+            animation: sparkle 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes sparkle {
+            0% { transform: scale(1) rotate(0deg); }
+            100% { transform: scale(1.2) rotate(180deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .celebration-card {
+                padding: 40px 25px;
+            }
+            
+            .celebration-card h1 {
+                font-size: 2.5rem;
+            }
+            
+            .trophy-icon {
+                font-size: 4rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    merci
+    <!-- Confetti Animation -->
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+
+    <div class="container">
+        <div class="celebration-card">
+            <div class="trophy-icon">🏆</div>
+            
+            <h1>Félicitations !</h1>
+            <h2>Ton achat a été confirmé avec succès</h2>
+            
+            <p>Tu viens de faire le <strong>meilleur investissement</strong> pour ta santé et ton bien-être !</p>
+            
+            <div class="success-message">
+                <h3><span class="sparkle">✨</span> Tu es maintenant prête pour ta transformation <span class="sparkle">✨</span></h3>
+                <p>Prépare-toi à découvrir des résultats qui vont changer ta vie !</p>
+            </div>
+
+            <div class="email-info">
+                <p><strong>📧 IMPORTANT :</strong></p>
+                <p>Tu vas recevoir ton accès complet par e-mail dans les <strong>prochaines minutes</strong>.</p>
+                <p><em>Pense à vérifier ta boîte de spam si tu ne vois rien d'ici 10 minutes !</em></p>
+            </div>
+
+            <div class="motivation-box">
+                <h3>💪 Ta nouvelle vie commence maintenant</h3>
+                <p>Suis exactement les instructions que tu vas recevoir.</p>
+                <p><strong>Des milliers de femmes ont déjà transformé leur vie</strong> grâce à ce programme.</p>
+                <p><em>Il n'y a aucune raison que ça ne marche pas pour toi aussi !</em></p>
+            </div>
+
+            <p style="font-size: 1.1rem; color: #e74c3c; margin-top: 30px;">
+                <strong>Si tu as la moindre question, notre équipe te répond sous 24h par e-mail !</strong>
+            </p>
+            
+            <p style="margin-top: 40px; font-size: 1.4rem; font-weight: 700;">
+                <span class="sparkle">🌟</span> <em>J'ai hâte de célébrer tes résultats avec toi !</em> <span class="sparkle">🌟</span>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Ajouter plus de confettis dynamiquement
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7', '#fd79a8', '#fdcb6e', '#6c5ce7', '#a29bfe'];
+            
+            for (let i = 0; i < 20; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.animationDelay = Math.random() * 3 + 's';
+                confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+
+        // Lancer les confettis au chargement et périodiquement
+        createConfetti();
+        setInterval(createConfetti, 3000);
+    </script>
 </body>
 
 </html>
