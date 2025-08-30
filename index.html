@@ -36,226 +36,117 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f8fafc;
             min-height: 100vh;
-            color: #333;
-            line-height: 1.6;
+            color: #1a202c;
+            line-height: 1.5;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 480px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 900px;
+                padding: 40px;
+            }
+
+            .headline {
+                padding: 40px 60px;
+                margin-bottom: 30px;
+            }
+
+            .headline h1 {
+                font-size: 2.8rem;
+                line-height: 1.1;
+                margin-bottom: 20px;
+            }
+
+            .subheadline {
+                font-size: 1.4rem;
+                margin-bottom: 0;
+            }
+
+            .video-container {
+                padding: 40px;
+                margin-bottom: 40px;
+            }
         }
 
         .headline {
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 15px;
-            padding: 40px 35px;
-            margin-bottom: 25px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
             text-align: center;
-            border: 3px solid #ff6b35;
+            border: 2px solid #e53e3e;
         }
 
         .headline h1 {
-            font-size: 2.8rem;
+            font-size: 1.75rem;
             font-weight: 800;
-            color: #2c3e50;
-            margin-bottom: 20px;
+            color: #2d3748;
+            margin-bottom: 12px;
             line-height: 1.2;
+            letter-spacing: -0.02em;
         }
 
         .highlight-red {
-            color: #e74c3c;
-            font-weight: 700;
+            color: #e53e3e;
+            font-weight: 800;
         }
 
         .highlight-green {
-            color: #27ae60;
+            color: #38a169;
             font-weight: 700;
         }
 
         .subheadline {
-            font-size: 1.3rem;
-            color: #34495e;
-            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 12px;
             font-weight: 500;
+            line-height: 1.4;
         }
 
         .video-container {
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-            margin-bottom: 40px;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            margin-bottom: 24px;
             text-align: center;
         }
 
-        .video-placeholder {
-            width: 100%;
-            height: 500px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
 
-        .play-button {
-            width: 100px;
-            height: 100px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            transition: all 0.3s ease;
-        }
 
-        .play-button::after {
-            content: "";
-            width: 0;
-            height: 0;
-            border-left: 30px solid #333;
-            border-top: 20px solid transparent;
-            border-bottom: 20px solid transparent;
-            margin-left: 8px;
-        }
-
-        .video-placeholder:hover {
-            transform: scale(1.02);
-        }
-
-        .video-placeholder:hover .play-button {
-            transform: scale(1.1);
-            background: white;
-        }
-
-        .comments-section {
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-            margin-top: 30px;
-        }
-
-        .comments-header {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 25px;
-            text-align: center;
-            border-bottom: 2px solid #ecf0f1;
-            padding-bottom: 15px;
-        }
-
-        .comment {
-            display: flex;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .comment:hover {
-            background: #e8f4fd;
-            transform: translateY(-2px);
-        }
-
-        .comment-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-            object-fit: cover;
-        }
-
-        .comment-content {
-            flex: 1;
-        }
-
-        .comment-author {
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-
-        .comment-text {
-            color: #555;
-            margin-bottom: 8px;
-        }
-
-        .comment-actions {
-            display: flex;
-            gap: 15px;
-            font-size: 0.9rem;
-        }
-
-        .like-btn,
-        .reply-btn {
-            color: #3b5998;
-            cursor: pointer;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .like-btn:hover,
-        .reply-btn:hover {
-            color: #1e3c72;
-        }
-
-        .like-btn.liked {
-            color: #e74c3c;
-        }
-
-        .comment-time {
-            color: #888;
-            font-size: 0.8rem;
-        }
-
-        .loading-comments {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            font-style: italic;
-        }
-
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             .container {
-                padding: 15px;
+                padding: 12px;
+            }
+
+            .headline {
+                padding: 20px 16px;
             }
 
             .headline h1 {
-                font-size: 2.2rem;
+                font-size: 1.5rem;
+                line-height: 1.2;
             }
 
             .subheadline {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
-            .video-placeholder {
-                height: 300px;
-            }
-
-            .play-button {
-                width: 70px;
-                height: 70px;
-            }
-
-            .play-button::after {
-                border-left: 20px solid #333;
-                border-top: 15px solid transparent;
-                border-bottom: 15px solid transparent;
+            .video-container {
+                padding: 16px 12px;
             }
         }
     </style>
@@ -264,186 +155,22 @@
 <body>
     <div class="container">
         <div class="headline">
-            <h1><span class="highlight-red">Le Secret Intestinal de 2400 ans</span> qui libère les femmes de la
-                constipation et des ballonnements !</h1>
+            <h1><span class="highlight-red">7KG DE DÉCHETS TOXIQUES</span> évacués en <span class="highlight-red">21 JOURS</span></h1>
 
             <div class="subheadline">
-                <span class="highlight-green">Dr. Claire Moureau</span> révèle comment éliminer jusqu'à <span
-                    class="highlight-red">7kg de déchets accumulés</span> naturellement
+                Méthode du <span class="highlight-green">Dr. Moureau</span> validée par <span class="highlight-red">32.000 femmes</span>
             </div>
         </div>
 
-        <vturb-smartplayer id="vid-68b0ce8866bd34afbb0fe9f0"
-            style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>
-        <script
-            type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/3e773b80-0f54-4eef-98da-7a25ae9d6d45/players/68b0ce8866bd34afbb0fe9f0/v4/player.js", s.async = !0, document.head.appendChild(s); </script>
+        <div class="video-container">
+            <vturb-smartplayer id="vid-68b0ce8866bd34afbb0fe9f0"
+                style="display: block; margin: 0 auto; width: 100%; max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);"></vturb-smartplayer>
+            <script
+                type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/3e773b80-0f54-4eef-98da-7a25ae9d6d45/players/68b0ce8866bd34afbb0fe9f0/v4/player.js", s.async = !0, document.head.appendChild(s); </script>
+        </div>
 
-        <!-- <div class="comments-section">
-            <div class="comments-header">
-                💬 Ce que disent nos lectrices
-            </div>
-
-            <div id="comments-container">
-                <div class="loading-comments">
-                    Chargement des commentaires...
-                </div>
-            </div>
-        </div> -->
     </div>
 
-    <script>
-        function playVideo() {
-            alert('Votre vidéo sera intégrée ici');
-        }
-
-        // Données des commentaires fake
-        const fakeComments = [
-            {
-                name: "Marie Dubois",
-                avatar: "https://randomuser.me/api/portraits/women/12.jpg",
-                text: "Mon Dieu ! Après 15 ans de constipation chronique, j'ai enfin trouvé la solution ! Merci Dr. Moureau, vous avez changé ma vie. Je vais aux toilettes tous les jours maintenant sans effort ! 😭❤️",
-                likes: 247,
-                time: "Il y a 2 heures"
-            },
-            {
-                name: "Sophie Martin",
-                avatar: "https://randomuser.me/api/portraits/women/34.jpg",
-                text: "J'étais sceptique au début mais après avoir appliqué Le Code Intestinal, j'ai perdu 6kg en 3 semaines ! Mon ventre est enfin plat et je n'ai plus ces gaz gênants. Merci infiniment ! 🙏",
-                likes: 156,
-                time: "Il y a 4 heures"
-            },
-            {
-                name: "Isabelle Leroy",
-                avatar: "https://randomuser.me/api/portraits/women/67.jpg",
-                text: "Incroyable ! Plus de ballonnements, plus de douleurs. Je peux enfin porter mes robes préférées sans complexe. Cette méthode naturelle vaut de l'or ! ✨",
-                likes: 89,
-                time: "Il y a 6 heures"
-            },
-            {
-                name: "Catherine Moreau",
-                avatar: "https://randomuser.me/api/portraits/women/23.jpg",
-                text: "Je recommande à toutes mes amies ! Fini les laxatifs qui me faisaient mal. Maintenant mon transit fonctionne comme une horloge suisse 🕐",
-                likes: 203,
-                time: "Il y a 8 heures"
-            },
-            {
-                name: "Nathalie Bernard",
-                avatar: "https://randomuser.me/api/portraits/women/45.jpg",
-                text: "Dr. Moureau, vous êtes un ange ! 💜 J'avais perdu espoir après tant d'années de souffrance. Maintenant je me sens libérée, légère, en pleine forme !",
-                likes: 134,
-                time: "Il y a 12 heures"
-            },
-            {
-                name: "Brigitte Rousseau",
-                avatar: "https://randomuser.me/api/portraits/women/58.jpg",
-                text: "Ma fille m'a partagé cette vidéo et je ne regrette pas ! À 58 ans, je me sens comme à 30 ans. Plus d'inflammations, plus de fatigue. Merci ! 🌟",
-                likes: 97,
-                time: "Il y a 1 jour"
-            },
-            {
-                name: "Camille Petit",
-                avatar: "https://randomuser.me/api/portraits/women/76.jpg",
-                text: "Enfin une solution qui fonctionne vraiment ! Mon intestin était complètement bloqué depuis des années. Maintenant tout fonctionne parfaitement ! Une vraie révélation ! 🌸",
-                likes: 189,
-                time: "Il y a 5 heures"
-            },
-            {
-                name: "Élodie Garnier",
-                avatar: "https://randomuser.me/api/portraits/women/29.jpg",
-                text: "Cette méthode a sauvé ma vie sociale ! Plus de gêne, plus de ballonnements après les repas. Je me sens enfin libre et confiante ! Merci Dr. Moureau ! 💖",
-                likes: 143,
-                time: "Il y a 7 heures"
-            }
-        ];
-
-        let likedComments = new Set();
-
-        function createCommentHTML(comment, index) {
-            const isLiked = likedComments.has(index);
-            return `
-                <div class="comment">
-                    <img src="${comment.avatar}" alt="${comment.name}" class="comment-avatar" onerror="this.src='data:image/svg+xml,<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><circle cx=\\"50\\" cy=\\"50\\" r=\\"40\\" fill=\\"%23ddd\\"/><text x=\\"50\\" y=\\"55\\" text-anchor=\\"middle\\" fill=\\"white\\" font-size=\\"14\\">${comment.name.charAt(0)}</text></svg>'">
-                    <div class="comment-content">
-                        <div class="comment-author">${comment.name}</div>
-                        <div class="comment-text">${comment.text}</div>
-                        <div class="comment-actions">
-                            <span class="like-btn ${isLiked ? 'liked' : ''}" onclick="toggleLike(${index})">
-                                👍 J'aime (${comment.likes + (isLiked ? 1 : 0)})
-                            </span>
-                            <span class="reply-btn" onclick="reply('${comment.name}')">💬 Répondre</span>
-                            <span class="comment-time">${comment.time}</span>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        function loadComments() {
-            const container = document.getElementById('comments-container');
-            container.innerHTML = fakeComments.map(createCommentHTML).join('');
-        }
-
-        function toggleLike(index) {
-            if (likedComments.has(index)) {
-                likedComments.delete(index);
-            } else {
-                likedComments.add(index);
-            }
-            loadComments();
-        }
-
-        function reply(name) {
-            alert(`Les réponses sont désactivées sur cette page.`);
-        }
-
-        // Charger les commentaires avec un délai pour simuler le chargement
-        setTimeout(() => {
-            loadComments();
-        }, 1500);
-
-        // Ajouter de nouveaux commentaires périodiquement
-        setInterval(() => {
-            const newComments = [
-                {
-                    name: "Amélie Petit",
-                    avatar: "https://randomuser.me/api/portraits/women/91.jpg",
-                    text: "Je viens de terminer la vidéo... WOW ! Tout s'explique enfin ! Cette méthode est révolutionnaire ! 🛒",
-                    likes: Math.floor(Math.random() * 50) + 10,
-                    time: "À l'instant"
-                },
-                {
-                    name: "Sylvie Roux",
-                    avatar: "https://randomuser.me/api/portraits/women/38.jpg",
-                    text: "Merci pour cette révélation Dr. Moureau ! Enfin une solution naturelle qui fonctionne vraiment ! 🌿",
-                    likes: Math.floor(Math.random() * 30) + 5,
-                    time: "À l'instant"
-                },
-                {
-                    name: "Aurélie Blanc",
-                    avatar: "https://randomuser.me/api/portraits/women/82.jpg",
-                    text: "Extraordinaire ! J'ai appliqué la méthode et mon transit s'est régulé en quelques jours seulement ! Merci ! ✨",
-                    likes: Math.floor(Math.random() * 40) + 15,
-                    time: "À l'instant"
-                },
-                {
-                    name: "Lucie Fontaine",
-                    avatar: "https://randomuser.me/api/portraits/women/16.jpg",
-                    text: "Cette présentation change vraiment la donne ! Enfin quelqu'un qui explique la vraie cause ! Bravo Dr. Moureau ! 👏",
-                    likes: Math.floor(Math.random() * 35) + 8,
-                    time: "À l'instant"
-                }
-            ];
-
-            const randomComment = newComments[Math.floor(Math.random() * newComments.length)];
-            fakeComments.unshift(randomComment);
-
-            if (fakeComments.length > 12) {
-                fakeComments.pop();
-            }
-
-            loadComments();
-        }, 45000); // Nouveau commentaire toutes les 45 secondes
-    </script>
 </body>
 
 </html>
